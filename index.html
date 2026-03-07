@@ -162,15 +162,36 @@
             </div>
         </section>
 
-        <section id="support" class="legal-section">
-            <h2>Support & Contact</h2>
-            <div class="legal-content" style="text-align: center;">
-                <p>Need help with CoachMe? I'm here to help you get the most out of your coaching cards.</p>
-                <p style="margin-top: 25px;">
-                    <a href="mailto:support@esprit-du-net.eu" class="btn-main" style="background: var(--accent);">Email Support</a>
+    <section id="privacy" class="legal-section">
+            <h2>Privacy Policy</h2>
+            <div class="legal-content">
+                <p style="text-align: center; margin-bottom: 30px;">
+                    <strong>Effective Date: February 14, 2026</strong><br>
+                    CoachMe is built on the principle of <strong>Privacy by Design</strong>. Your inspiration is your business, not ours.
                 </p>
-                <p style="margin-top: 20px; font-size: 0.8rem;">
-                    Or visit the <a href="https://github.com/espritdunet/coachme-web/issues" target="_blank">Public Community Tracker</a> to report a bug.
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <h4>🔒 100% Offline & Private</h4>
+                        <p>CoachMe runs entirely locally. No accounts, no telemetry, and no hidden analytics (like Firebase or Google Analytics). We don't even know when you open the app.</p>
+                    </div>
+                    <div>
+                        <h4>💾 Local Storage</h4>
+                        <p>Everything is stored on your Mac using <strong>SwiftData</strong> and <strong>UserDefaults</strong>. Your custom images remain within the App's secure sandbox.</p>
+                    </div>
+                </div>
+
+                <h4>🛠 Technical Transparency</h4>
+                <p>We use Apple's <strong>Unified Logging (OSLog)</strong> for diagnostics. All sensitive content (your card text and file paths) is explicitly marked as <code>&lt;private&gt;</code>. This means it is automatically redacted and never visible in system logs unless you are debugging the app yourself.</p>
+
+                <h4>🔄 Local Backups</h4>
+                <p>Automatic backups are created before major updates, but they never leave your machine. They are stored in your <code>Application Support</code> folder and can be managed directly from the app settings.</p>
+
+                <h4>🌐 Third-Party Services</h4>
+                <p>The app does not communicate with any external servers. The only third-party interaction is with standard macOS services (like iCloud if you manually choose to sync your files).</p>
+
+                <p style="margin-top: 30px; font-size: 0.8rem; border-top: 1px solid #eee; padding-top: 20px;">
+                    Since we collect no data, we do not track or profile users, including children under 13. For any privacy-related questions, please open an issue on our <a href="https://github.com/espritdunet/CoachMe/issues" target="_blank">GitHub repository</a>.
                 </p>
             </div>
         </section>
