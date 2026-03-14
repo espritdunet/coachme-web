@@ -339,6 +339,54 @@
             .hero .subtitle { font-size: 17px; }
             .btn-lg { font-size: 15px; padding: 12px 24px; }
         }
+
+        /* ── LIGHTBOX ── */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            cursor: zoom-out;
+        }
+
+        .lightbox-overlay.is-open {
+            display: flex;
+        }
+
+        .lightbox-overlay img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+            cursor: default;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0.8;
+            background: none;
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .lightbox-close:hover { opacity: 1; }
+
+        /* Rend les images cliquables visuellement */
+        .feature-card img,
+        .gallery-item img {
+            cursor: zoom-in;
+        }
     </style>
 </head>
 <body>
@@ -477,6 +525,43 @@
         <p>&copy; 2026 Esprit du Net (Olivier). Built with ❤️ for macOS.</p>
         <p>Apple, the Apple logo, and macOS are trademarks of Apple Inc.</p>
     </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        const overlay   = document.getElementById('lightbox');
+        const lbImg     = document.getElementById('lightbox-img');
+        const closeBtn  = document.getElementById('lightbox-close');
+
+        // Open on any feature-card or gallery-item image click
+        document.querySelectorAll('.feature-card img, .gallery-item img')
+            .forEach(img => {
+                img.addEventListener('click', () => {
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt;
+                    overlay.classList.add('is-open');
+                });
+            });
+
+        // Close on overlay click (but not on the image itself)
+        overlay.addEventListener('click', (e) => {
+            if (e.target !== lbImg) overlay.classList.remove('is-open');
+        });
+
+        // Close on button click
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.remove('is-open');
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') overlay.classList.remove('is-open');
+        });
+    </script>
 
 </body>
 </html>
