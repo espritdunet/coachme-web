@@ -1,0 +1,43 @@
+# --- OS System Files (macOS) ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# --- Image Thumbs and Caches ---
+# Ignore preview files but keep source images
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Dependencies and Modules ---
+node_modules/
+bower_components/
+vendor/
+
+# --- Logs and Temp Files ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.tmp/
+.cache/
+
+# --- Environment and Security (CRITICAL) ---
+.env
+.env.local
+.env.*.local
+*.swp
+.ssh/
+auth.json
+
+# --- IDE / Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---Originals Screenshots ---
+screenshots/originals/
+
