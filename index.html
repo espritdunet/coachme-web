@@ -1,569 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoachMe — Daily Motivation on Your Mac</title>
-    <meta name="description" content="CoachMe — Motivational floating cards for macOS. 600+ curated quotes, smart scheduling, beautiful design.">
-    <meta property="og:title" content="CoachMe — Daily Motivation on Your Mac">
-    <meta property="og:image" content="https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card.webp">
-    <link rel="icon" type="image/png" href="icon.png">
-    <style>
-        :root {
-            --color-bg:       #FFFFFF;
-            --color-bg-alt:   #F5F5F7;
-            --color-text:     #1D1D1F;
-            --color-text-sub: #6E6E73;
-            --color-accent:   #0071E3;
-            --color-border:   #D2D2D7;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Primary meta -->
+<title>CoachMe — Daily Motivation on Your Mac</title>
+<meta name="description"
+    content="CoachMe — Motivational floating cards for macOS. 600+ curated quotes, smart scheduling, beautiful design.">
+<!-- Canonical + hreflang alternates -->
+<link rel="canonical" href="https://coachme.esprit-du-net.eu/">
+<link rel="alternate" hreflang="en" href="https://coachme.esprit-du-net.eu/">
+<link rel="alternate" hreflang="fr" href="https://coachme.esprit-du-net.eu/fr/">
+<link rel="alternate" hreflang="de" href="https://coachme.esprit-du-net.eu/de/">
+<link rel="alternate" hreflang="es" href="https://coachme.esprit-du-net.eu/es/">
+<link rel="alternate" hreflang="x-default" href="https://coachme.esprit-du-net.eu/">
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- Open Graph -->
+<meta property="og:title" content="CoachMe — Daily Motivation on Your Mac">
+<meta property="og:description"
+    content="Motivational floating cards for macOS. 600+ curated quotes, smart scheduling, beautiful design.">
+<meta property="og:image" content="https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card.webp">
+<meta property="og:url" content="https://coachme.esprit-du-net.eu/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CoachMe — Daily Motivation on Your Mac">
+<meta name="twitter:description"
+    content="Motivational floating cards for macOS. 600+ curated quotes, smart scheduling, beautiful design.">
+<meta name="twitter:image"
+    content="https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card.webp">
 
-        /* ── HEADER ── */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--color-bg);
-            border-bottom: 1px solid var(--color-border);
-            padding: 0 24px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/icon.png">
 
-        .site-header .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--color-text);
-        }
-
-        .site-header .brand img {
-            width: 40px;
-            height: 40px;
-            border-radius: 9px;
-        }
-
-        .site-header .brand span {
-            font-size: 17px;
-            font-weight: 600;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--color-accent);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 980px;
-            white-space: nowrap;
-        }
-
-        .btn-sm {
-            font-size: 14px;
-            padding: 8px 20px;
-        }
-
-        .btn-lg {
-            font-size: 17px;
-            padding: 14px 32px;
-        }
-
-        /* ── HERO ── */
-        .hero {
-            background: var(--color-bg);
-            text-align: center;
-            padding: 80px 24px 64px;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 6vw, 72px);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.08;
-            margin-bottom: 16px;
-        }
-
-        .hero .subtitle {
-            font-size: 21px;
-            color: var(--color-text-sub);
-            margin-bottom: 40px;
-        }
-
-        .hero-screenshot {
-            margin: 48px auto 0;
-            max-width: 820px;
-            width: 100%;
-        }
-
-        .hero-screenshot img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-            display: block;
-        }
-
-        /* ── SECTIONS ── */
-        section {
-            padding: 80px 24px;
-        }
-
-        .section-alt {
-            background: var(--color-bg-alt);
-        }
-
-        .section-white {
-            background: var(--color-bg);
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 48px;
-            letter-spacing: -0.01em;
-        }
-
-        .section-inner {
-            max-width: 1040px;
-            margin: 0 auto;
-        }
-
-        /* ── FEATURES GRID ── */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: var(--color-bg);
-            border-radius: 12px;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .feature-card .emoji {
-            font-size: 32px;
-            line-height: 1;
-        }
-
-        .feature-card h3 {
-            font-size: 19px;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            font-size: 15px;
-            color: var(--color-text-sub);
-        }
-
-        .feature-card img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-            margin-top: auto;
-        }
-
-        /* ── GALLERY GRID ── */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-
-        .gallery-item {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .gallery-item:last-child:nth-child(odd) {
-            grid-column: 1 / -1;
-            max-width: calc(50% - 16px);
-            margin: 0 auto;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
-            transition: box-shadow 0.2s ease;
-            display: block;
-        }
-
-        .gallery-item img:hover {
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.16);
-        }
-
-        .gallery-item figcaption {
-            font-size: 14px;
-            color: var(--color-text-sub);
-            text-align: center;
-        }
-
-        /* ── PRIVACY ── */
-        .legal-content {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 15px;
-            color: var(--color-text-sub);
-        }
-
-        .legal-content .effective-date {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .privacy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-
-        .legal-content h4 {
-            color: var(--color-text);
-            margin: 20px 0 8px;
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .legal-content p { line-height: 1.6; }
-
-        .legal-content code {
-            font-family: ui-monospace, "SF Mono", monospace;
-            font-size: 13px;
-            background: rgba(0,0,0,0.06);
-            padding: 1px 5px;
-            border-radius: 4px;
-        }
-
-        .legal-content a {
-            color: var(--color-accent);
-            text-decoration: none;
-        }
-
-        .legal-content a:hover { text-decoration: underline; }
-
-        .legal-footer-note {
-            margin-top: 32px;
-            font-size: 13px;
-            border-top: 1px solid var(--color-border);
-            padding-top: 20px;
-        }
-
-        /* ── SUPPORT ── */
-        .support-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .support-content p { color: var(--color-text-sub); }
-
-        .support-content .btn-support {
-            display: inline-block;
-            margin-top: 24px;
-            background: var(--color-accent);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 12px 28px;
-            border-radius: 980px;
-        }
-
-        .support-content .tracker-link {
-            display: block;
-            margin-top: 20px;
-            font-size: 13px;
-        }
-
-        .support-content .tracker-link a {
-            color: var(--color-accent);
-            text-decoration: none;
-        }
-
-        .support-content .tracker-link a:hover { text-decoration: underline; }
-
-        /* ── FOOTER ── */
-        footer {
-            border-top: 1px solid var(--color-border);
-            background: var(--color-bg);
-            text-align: center;
-            padding: 32px 24px;
-            font-size: 13px;
-            color: var(--color-text-sub);
-        }
-
-        footer p + p { margin-top: 6px; }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-item:last-child:nth-child(odd) {
-                grid-column: auto;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .privacy-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 375px) {
-            .hero h1 { font-size: 36px; }
-            .hero .subtitle { font-size: 17px; }
-            .btn-lg { font-size: 15px; padding: 12px 24px; }
-        }
-
-        /* ── LIGHTBOX ── */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 999;
-            background: rgba(0, 0, 0, 0.85);
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            cursor: zoom-out;
-        }
-
-        .lightbox-overlay.is-open {
-            display: flex;
-        }
-
-        .lightbox-overlay img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 12px;
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
-            cursor: default;
-        }
-
-        .lightbox-close {
-            position: fixed;
-            top: 20px;
-            right: 24px;
-            color: #fff;
-            font-size: 32px;
-            font-weight: 300;
-            line-height: 1;
-            cursor: pointer;
-            opacity: 0.8;
-            background: none;
-            border: none;
-            padding: 4px 8px;
-        }
-
-        .lightbox-close:hover { opacity: 1; }
-
-        /* Rend les images cliquables visuellement */
-        .feature-card img,
-        .gallery-item img {
-            cursor: zoom-in;
-        }
-    </style>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <a href="#" class="brand">
-            <img src="icon.png" alt="CoachMe app icon">
-            <span>CoachMe</span>
-        </a>
-        <a href="https://apps.apple.com/fr/app/coachme-daily-motivation/id6760231959?mt=12
-CoachMe - Daily Motivation"
-           class="btn btn-sm"
-           aria-label="Coming soon to the Mac App Store">Download — Mac App Store</a>
-    </header>
+<!-- HEADER -->
+<header class="site-header">
+    <a href="/" class="brand">
+        <img src="/icon.png" alt="CoachMe app icon">
+        <span>CoachMe</span>
+    </a>
+<div class="site-header-actions">
+    <nav class="lang-switcher" aria-label="Language">
+        <a href="/" aria-current="page" hreflang="en" lang="en">EN</a>
+        <span aria-hidden="true">·</span>
+        <a href="/fr/" hreflang="fr" lang="fr">FR</a>
+        <span aria-hidden="true">·</span>
+        <a href="/de/" hreflang="de" lang="de">DE</a>
+        <span aria-hidden="true">·</span>
+        <a href="/es/" hreflang="es" lang="es">ES</a>
+    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Motivation, beautifully timed.</h1>
-        <p class="subtitle">Floating cards. 600+ quotes. Your rhythm.</p>
-        <a href="https://apps.apple.com/fr/app/coachme-daily-motivation/id6760231959?mt=12
-CoachMe - Daily Motivation"
-           class="btn btn-lg"
-           aria-label="Coming soon to the Mac App Store">Download on the Mac App Store</a>
-        <div class="hero-screenshot">
-            <img src="screenshots/web/screenshot-01-steve-jobs-card.webp"
-                 alt="CoachMe — Steve Jobs motivational card floating on desktop">
-        </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section-alt" id="features">
-        <div class="section-inner">
-            <h2 class="section-title">Everything you need to stay inspired.</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="emoji">📚</div>
-                    <h3>600+ quotes, ready to inspire</h3>
-                    <p>Browse a hand-picked library across philosophy, leadership, and mindfulness.</p>
-                    <img src="screenshots/web/screenshot-02-quote-library.webp"
-                         alt="CoachMe quote library with 600+ curated quotes">
-                </div>
-                <div class="feature-card">
-                    <div class="emoji">🎨</div>
-                    <h3>Design it your way</h3>
-                    <p>Choose from 8 curated gradients or build your own color palette.</p>
-                    <img src="screenshots/web/screenshot-03-gradient-colors.webp"
-                         alt="CoachMe gradient color picker for card customization">
-                </div>
-                <div class="feature-card">
-                    <div class="emoji">🌍</div>
-                    <h3>Your language, your words</h3>
-                    <p>Full support for English, French, German, and Spanish.</p>
-                    <img src="screenshots/web/screenshot-04-languages.webp"
-                         alt="CoachMe language selection — EN, FR, DE, ES">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="section-white" id="gallery">
-        <div class="section-inner">
-            <h2 class="section-title">See it in action.</h2>
-            <div class="gallery-grid">
-                <figure class="gallery-item">
-                    <img src="screenshots/web/screenshot-05-your-inspiration.webp"
-                         alt="CoachMe custom card creation interface">
-                    <figcaption>Your words, your rules — write your own cards.</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="screenshots/web/screenshot-06-make-it-yours.webp"
-                         alt="CoachMe card customization options">
-                    <figcaption>Every detail, customized — fonts, sizes, colors, icons.</figcaption>
-                </figure>
-                <figure class="gallery-item">
-                    <img src="screenshots/web/screenshot-07-full-scheduling.webp"
-                         alt="CoachMe scheduling configuration interface">
-                    <figcaption>Show up at the right moment — scheduling that fits your rhythm.</figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRIVACY -->
-    <section class="section-alt" id="privacy">
-        <div class="section-inner">
-            <h2 class="section-title">Privacy Policy</h2>
-            <div class="legal-content">
-                <p class="effective-date">
-                    <strong>Effective Date: February 14, 2026</strong><br>
-                    CoachMe is built on the principle of <strong>Privacy by Design</strong>. Your inspiration is your business, not ours.
-                </p>
-
-                <div class="privacy-grid">
-                    <div>
-                        <h4>🔒 100% Offline &amp; Private</h4>
-                        <p>CoachMe runs entirely locally. No accounts, no telemetry, and no hidden analytics (like Firebase or Google Analytics). We don't even know when you open the app.</p>
-                    </div>
-                    <div>
-                        <h4>💾 Local Storage</h4>
-                        <p>Everything is stored on your Mac using <strong>SwiftData</strong> and <strong>UserDefaults</strong>. Your custom images remain within the App's secure sandbox.</p>
-                    </div>
-                </div>
-
-                <h4>🛠 Technical Transparency</h4>
-                <p>We use Apple's <strong>Unified Logging (OSLog)</strong> for diagnostics. All sensitive content (your card text and file paths) is explicitly marked as <code>&lt;private&gt;</code>. This means it is automatically redacted and never visible in system logs unless you are debugging the app yourself.</p>
-
-                <h4>🔄 Local Backups</h4>
-                <p>Automatic backups are created before major updates, but they never leave your machine. They are stored in your <code>Application Support</code> folder and can be managed directly from the app settings.</p>
-
-                <h4>🌐 Third-Party Services</h4>
-                <p>The app does not communicate with any external servers. The only third-party interaction is with standard macOS services (like iCloud if you manually choose to sync your files).</p>
-
-                <p class="legal-footer-note">
-                    Since we collect no data, we do not track or profile users, including children under 13. For any privacy-related questions, please open an issue on our <a href="https://github.com/espritdunet/coachme-web/issues" target="_blank">GitHub repository</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SUPPORT -->
-    <section class="section-white" id="support">
-        <div class="section-inner">
-            <h2 class="section-title">Support &amp; Contact</h2>
-            <div class="support-content">
-                <p>Need help with CoachMe? I'm here to help you get the most out of your coaching cards.</p>
-                <a href="mailto:support@esprit-du-net.eu" class="btn-support">Email Support</a>
-                <p class="tracker-link">
-                    Or visit the <a href="https://github.com/espritdunet/coachme-web/issues" target="_blank">Public Community Tracker</a> to report a bug.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Esprit du Net (Olivier). Built with ❤️ for macOS.</p>
-        <p>Apple, the Apple logo, and macOS are trademarks of Apple Inc.</p>
-    </footer>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
-        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
-        <img id="lightbox-img" src="" alt="">
+    <a href="https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12" class="btn btn-sm"
+         aria-label="Download CoachMe on the Mac App Store">Download — Mac App Store</a>
     </div>
+  </header>
 
-    <script>
-        const overlay   = document.getElementById('lightbox');
-        const lbImg     = document.getElementById('lightbox-img');
-        const closeBtn  = document.getElementById('lightbox-close');
+<!-- HERO -->
+<section class="hero">
+    <h1>Motivation, beautifully timed.</h1>
+    <p class="subtitle">Floating cards. 600+ quotes. Your rhythm.</p>
+    <a href="https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12" class="btn btn-lg"
+       aria-label="Download CoachMe on the Mac App Store">Download on the Mac App Store</a>
 
-        // Open on any feature-card or gallery-item image click
-        document.querySelectorAll('.feature-card img, .gallery-item img')
-            .forEach(img => {
-                img.addEventListener('click', () => {
-                    lbImg.src = img.src;
-                    lbImg.alt = img.alt;
-                    overlay.classList.add('is-open');
-                });
-            });
+    <div class="hero-screenshot">
+    <img src="/screenshots/web/screenshot-01-steve-jobs-card.webp"
+        alt="CoachMe — Steve Jobs motivational card floating on desktop">
+    </div>
+    </section>
 
-        // Close on overlay click (but not on the image itself)
-        overlay.addEventListener('click', (e) => {
-            if (e.target !== lbImg) overlay.classList.remove('is-open');
-        });
+<!-- FEATURES -->
+<section class="section-alt" id="features">
+    <div class="section-inner">
+        <h2 class="section-title">Everything you need to stay inspired.</h2>
 
-        // Close on button click
-        closeBtn.addEventListener('click', () => {
-            overlay.classList.remove('is-open');
-        });
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="emoji">📚</div>
+            <h3>600+ quotes, ready to inspire</h3>
+            <p>Browse a hand-picked library across philosophy, leadership, and mindfulness.</p>
+        <img src="/screenshots/web/screenshot-02-quote-library.webp" alt="CoachMe quote library with 600+ curated quotes">
+        </div>
 
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') overlay.classList.remove('is-open');
-        });
-    </script>
+        <div class="feature-card">
+            <div class="emoji">🎨</div>
+            <h3>Design it your way</h3>
+            <p>Choose from 8 curated gradients or build your own color palette.</p>
+        <img src="/screenshots/web/screenshot-03-gradient-colors.webp"
+            alt="CoachMe gradient color picker for card customization">
+        </div>
 
+        <div class="feature-card">
+            <div class="emoji">🌍</div>
+            <h3>Your language, your words</h3>
+            <p>Full support for English, French, German, and Spanish.</p>
+        <img src="/screenshots/web/screenshot-04-languages.webp" alt="CoachMe language selection — EN, FR, DE, ES">
+        </div>
+        </div>
+        </div>
+        </section>
+
+<!-- GALLERY -->
+<section class="section-white" id="gallery">
+    <div class="section-inner">
+        <h2 class="section-title">See it in action.</h2>
+
+    <div class="gallery-grid">
+        <figure class="gallery-item">
+        <img src="/screenshots/web/screenshot-05-your-inspiration.webp" alt="CoachMe custom card creation interface">
+        <figcaption>Your words, your rules — write your own cards.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+        <img src="/screenshots/web/screenshot-06-make-it-yours.webp" alt="CoachMe card customization options">
+        <figcaption>Every detail, customized — fonts, sizes, colors, icons.</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+        <img src="/screenshots/web/screenshot-07-full-scheduling.webp" alt="CoachMe scheduling configuration interface">
+        <figcaption>Show up at the right moment — scheduling that fits your rhythm.</figcaption>
+        </figure>
+        </div>
+        </div>
+        </section>
+
+<!-- PRIVACY -->
+<section class="section-alt" id="privacy">
+    <div class="section-inner">
+        <h2 class="section-title">Privacy Policy</h2>
+        <div class="legal-content">
+            <p class="effective-date">
+                <strong>Effective Date: February 14, 2026</strong><br>
+                CoachMe is built on the principle of <strong>Privacy by Design</strong>. Your inspiration is your
+                business, not ours.
+            </p>
+
+        <div class="privacy-grid">
+            <div>
+                <h4>🔒 100% Offline &amp; Private</h4>
+                <p>CoachMe runs entirely locally. No accounts, no telemetry, and no hidden analytics (like Firebase or Google
+                    Analytics). We don't even know when you open the app.</p>
+            </div>
+            <div>
+                <h4>💾 Local Storage</h4>
+                <p>Everything is stored on your Mac using <strong>SwiftData</strong> and <strong>UserDefaults</strong>. Your
+                    custom images remain within the App's secure sandbox.</p>
+            </div>
+        </div>
+
+        <h4>🛠 Technical Transparency</h4>
+        <p>We use Apple's <strong>Unified Logging (OSLog)</strong> for diagnostics. All sensitive content (your card text and
+            file paths) is explicitly marked as <code>&lt;private&gt;</code>. This means it is automatically redacted and never
+            visible in system logs unless you are debugging the app yourself.</p>
+
+        <h4>🔄 Local Backups</h4>
+        <p>Automatic backups are created before major updates, but they never leave your machine. They are stored in your
+            <code>Application Support</code> folder and can be managed directly from the app settings.</p>
+
+        <h4>🌐 Third-Party Services</h4>
+        <p>The app does not communicate with any external servers. The only third-party interaction is with standard macOS
+            services (like iCloud if you manually choose to sync your files).</p>
+
+        <p class="legal-footer-note">
+        Since we collect no data, we do not track or profile users, including children under 13. For any privacy-related
+        questions, please open an issue on our <a href="https://github.com/espritdunet/coachme-web/issues" target="_blank"
+            rel="noopener">GitHub repository</a>.
+        </p>
+        </div>
+        </div>
+        </section>
+
+<!-- SUPPORT -->
+<section class="section-white" id="support">
+    <div class="section-inner">
+        <h2 class="section-title">Support &amp; Contact</h2>
+        <div class="support-content">
+            <p>Need help with CoachMe? I'm here to help you get the most out of your coaching cards.</p>
+            <a href="mailto:support@esprit-du-net.eu" class="btn-support">Email Support</a>
+            <p class="tracker-link">
+        Or visit the <a href="https://github.com/espritdunet/coachme-web/issues" target="_blank" rel="noopener">Public Community
+            Tracker</a> to report a bug.
+        </p>
+        </div>
+        </div>
+        </section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Esprit du Net (Olivier). Built with ❤️ for macOS.</p>
+    <p>Apple, the Apple logo, and macOS are trademarks of Apple Inc.</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="/assets/lightbox.js" defer></script>
 </body>
 </html>
