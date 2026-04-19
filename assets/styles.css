@@ -431,11 +431,20 @@ footer p+p {
 }
 
 @media (max-width: 480px) {
-    .site-header .brand span {
-        display: none;
+    .site-header {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 8px 16px;
+        gap: 6px;
+    }
+
+    .site-header .brand {
+        flex: 1;
     }
 
     .site-header-actions {
+        width: 100%;
+        justify-content: space-between;
         gap: 12px;
     }
 
