@@ -42,6 +42,113 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/icon.png">
 
+    <!-- Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CoachMe",
+      "alternateName": "CoachMe — Motivation quotidienne",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "macOS 26 Tahoe",
+      "softwareVersion": "1.0.5",
+      "url": "https://coachme.esprit-du-net.eu/fr/",
+      "image": "https://coachme.esprit-du-net.eu/icon.png",
+      "description": "Un rituel intime, à l'instant juste. Des cartes motivantes flottantes que vous écrivez — ou laissez CoachMe vous surprendre avec des citations sélectionnées d'une bibliothèque en croissance. Application macOS pour Apple Silicon.",
+      "inLanguage": ["fr", "en", "de", "es"],
+      "downloadUrl": "https://apps.apple.com/fr/app/coachme-daily-motivation/id6760231959?mt=12",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://apps.apple.com/fr/app/coachme-daily-motivation/id6760231959?mt=12"
+      },
+      "screenshot": [
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-02-quote-library-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-03-gradient-colors-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-04-languages-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-05-your-inspiration-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-06-make-it-yours-FR.webp",
+        "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-07-full-scheduling-FR.webp"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Olivier",
+        "url": "https://esprit-du-net.eu/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Esprit du Net"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre la version gratuite et Pro ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La version gratuite permet de créer jusqu'à 3 cartes personnalisées avec vos propres messages ou des citations issues de la bibliothèque intégrée. Pro (9,99 € achat unique) débloque les cartes personnalisées illimitées et les cartes surprises tirées automatiquement de toute la bibliothèque au fil de la journée. Toutes les options de personnalisation — dégradés, photos, polices, planification — sont entièrement débloquées dès le départ, en Gratuit comme en Pro. Aucune limite artificielle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le tarif de 9,99 € est-il vraiment un achat unique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — un paiement, à vie. Pas d'abonnement, pas de prélèvement récurrent, pas de renouvellement. Les futures mises à jour de la bibliothèque et les nouvelles langues sont incluses sans surcoût."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles versions de macOS sont prises en charge ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CoachMe requiert macOS 26 Tahoe ou plus récent et fonctionne nativement sur Apple Silicon (M1, M2, M3, M4) pour des performances et une autonomie optimales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont les possibilités de personnalisation ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Très étendues. Vous pouvez écrire vos propres messages — objectifs, mantras, rappels. Choisir parmi 10 dégradés soignés, ou composer votre propre palette. Utiliser n'importe quelle photo de votre bibliothèque comme arrière-plan. Choisir polices, tailles, icônes — chaque détail visuel. Vos cartes restent les vôtres, même lorsque la citation vient de la bibliothèque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je contrôler quand les cartes apparaissent ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolument — vous fixez le rythme. Programmez des horaires précis, des intervalles réguliers pendant vos heures de travail, ou laissez des cartes surprises survenir au fil de la journée. Mettez tout en pause pendant vos plages de concentration, vos soirées, vos week-ends — quand vous avez besoin de silence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où sont stockées mes données ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entièrement sur votre Mac. CoachMe utilise SwiftData et UserDefaults en local — pas de cloud, pas de compte, pas de télémétrie. Nous ne savons même pas quand vous ouvrez l'application. Des sauvegardes locales sont créées avant les mises à jour majeures pour ne jamais perdre vos cartes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La bibliothèque et les langues vont-elles continuer de s'enrichir ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — la bibliothèque est le cœur du travail à long terme. L'objectif est d'atteindre plusieurs milliers de citations et d'ajouter de nouvelles langues au fil du temps. Votre achat Pro finance directement ce travail, et toutes les mises à jour sont gratuites pour les utilisateurs Pro."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
@@ -117,7 +224,7 @@
                 <div class="feature-card">
                     <div class="emoji">🎨</div>
                     <h3>À votre image</h3>
-                    <p>Choisissez parmi 8 dégradés soignés, ou composez votre propre palette.</p>
+                    <p>Choisissez parmi 10 dégradés soignés, ou composez votre propre palette.</p>
                     <img src="/screenshots/web/screenshot-03-gradient-colors-FR.webp"
                         alt="Sélecteur de dégradés de CoachMe pour la personnalisation des cartes">
                 </div>
@@ -212,6 +319,69 @@
                     d'ouvrir un ticket sur notre <a href="https://github.com/espritdunet/coachme-web/issues"
                         target="_blank" rel="noopener">dépôt GitHub</a>.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-white" id="faq">
+        <div class="section-inner">
+            <h2 class="section-title">Questions fréquentes</h2>
+            <div class="faq-list">
+                <details>
+                    <summary>Quelle différence entre la version gratuite et Pro ?</summary>
+                    <div class="faq-answer">
+                        <p>La version gratuite vous permet de créer jusqu'à <strong>3 cartes personnalisées</strong> — avec vos propres messages ou des citations issues de la bibliothèque intégrée. <strong>Pro (9,99 €, achat unique)</strong> débloque deux choses :</p>
+                        <ul>
+                            <li>Cartes personnalisées illimitées</li>
+                            <li>Cartes surprises tirées automatiquement de toute la bibliothèque au fil de la journée</li>
+                        </ul>
+                        <p>C'est tout. Toutes les options de personnalisation — dégradés, photos, polices, planification — sont entièrement débloquées dès le départ, en Gratuit comme en Pro. Aucune limite artificielle.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Le tarif de 9,99 € est-il vraiment un achat unique ?</summary>
+                    <div class="faq-answer">
+                        <p>Oui — un paiement, à vie. Pas d'abonnement, pas de prélèvement récurrent, pas de renouvellement. Les futures mises à jour de la bibliothèque et les nouvelles langues sont incluses sans surcoût.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Quelles versions de macOS sont prises en charge ?</summary>
+                    <div class="faq-answer">
+                        <p>CoachMe requiert <strong>macOS 26 Tahoe ou plus récent</strong> et fonctionne <strong>nativement sur Apple Silicon</strong> (M1, M2, M3, M4) pour des performances et une autonomie optimales.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Quelles sont les possibilités de personnalisation ?</summary>
+                    <div class="faq-answer">
+                        <p>Très étendues. Vous pouvez :</p>
+                        <ul>
+                            <li>Écrire vos propres messages — objectifs, mantras, rappels, mots adressés à vous-même</li>
+                            <li>Choisir parmi 10 dégradés soignés, ou composer votre propre palette de couleurs</li>
+                            <li>Utiliser n'importe quelle photo de votre bibliothèque comme arrière-plan — vos rêves, vos lieux, vos proches</li>
+                            <li>Choisir polices, tailles, icônes — chaque détail visuel</li>
+                        </ul>
+                        <p>Vos cartes restent les vôtres, même lorsque la citation vient de la bibliothèque.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Puis-je contrôler quand les cartes apparaissent ?</summary>
+                    <div class="faq-answer">
+                        <p>Absolument — vous fixez le rythme. Programmez des horaires précis, des intervalles réguliers pendant vos heures de travail, ou laissez des cartes surprises survenir au fil de la journée. Mettez tout en pause pendant vos plages de concentration, vos soirées, vos week-ends — quand vous avez besoin de silence.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Où sont stockées mes données ?</summary>
+                    <div class="faq-answer">
+                        <p>Entièrement sur votre Mac. CoachMe utilise SwiftData et UserDefaults en local — pas de cloud, pas de compte, pas de télémétrie. Nous ne savons même pas quand vous ouvrez l'application. Des sauvegardes locales sont créées avant les mises à jour majeures pour ne jamais perdre vos cartes.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>La bibliothèque et les langues vont-elles continuer de s'enrichir ?</summary>
+                    <div class="faq-answer">
+                        <p>Oui — la bibliothèque est le cœur du travail à long terme. L'objectif est d'atteindre plusieurs milliers de citations et d'ajouter de nouvelles langues au fil du temps. Votre achat Pro finance directement ce travail, et toutes les mises à jour sont gratuites pour les utilisateurs Pro.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>

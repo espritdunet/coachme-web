@@ -38,6 +38,113 @@
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/icon.png">
 
+<!-- Structured Data (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CoachMe",
+  "alternateName": "CoachMe — Daily Motivation",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "macOS 26 Tahoe",
+  "softwareVersion": "1.0.5",
+  "url": "https://coachme.esprit-du-net.eu/",
+  "image": "https://coachme.esprit-du-net.eu/icon.png",
+  "description": "A quiet ritual, beautifully timed. Floating motivational cards you write — or let CoachMe surprise you with curated quotes from a growing library. A macOS app for Apple Silicon.",
+  "inLanguage": ["en", "fr", "de", "es"],
+  "downloadUrl": "https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12"
+  },
+  "screenshot": [
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-02-quote-library.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-03-gradient-colors.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-04-languages.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-05-your-inspiration.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-06-make-it-yours.webp",
+    "https://coachme.esprit-du-net.eu/screenshots/web/screenshot-07-full-scheduling.webp"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Olivier",
+    "url": "https://esprit-du-net.eu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Esprit du Net"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between Free and Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free lets you create up to 3 custom cards with your own messages or quotes drawn from the built-in library. Pro (9.99 EUR one-time) unlocks unlimited custom cards and surprise cards drawn automatically from the full library throughout your day. All customization options — gradients, photos, fonts, scheduling — are fully unlocked from the start, in both Free and Pro. No artificial limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the 9.99 EUR really a one-time purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — pay once, own it forever. No subscription, no recurring charge, no renewal. Future quote-library updates and new languages are included at no extra cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which macOS versions are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CoachMe requires macOS 26 Tahoe or later and runs natively on Apple Silicon (M1, M2, M3, M4) for the best performance and battery efficiency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I customize my cards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deeply. Write your own messages — goals, mantras, reminders. Choose from 10 curated gradient backgrounds, or build your own color palette. Use any photo from your library as a card background. Pick fonts, sizes, icons — every visual detail. Your cards stay yours, even when the quote comes from the library."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I control when cards appear?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely — you set the rhythm. Schedule specific times, regular intervals during work hours, or let surprise cards land throughout the day. Pause everything during focus blocks, evenings, weekends — whenever you need silence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is my data stored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entirely on your Mac. CoachMe uses local SwiftData and UserDefaults — no cloud, no account, no telemetry. We do not even know when you open the app. Local backups are saved before major updates so you never lose your cards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will new quotes and languages keep coming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the library is the core ongoing work. The goal is to grow toward several thousand quotes and add more languages over time. Your Pro purchase funds this directly, and all updates are free for Pro users."
+      }
+    }
+  ]
+}
+</script>
+
 <!-- Stylesheet -->
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
@@ -109,7 +216,7 @@
         <div class="feature-card">
             <div class="emoji">🎨</div>
             <h3>Design it your way</h3>
-            <p>Choose from 8 curated gradients or build your own color palette.</p>
+            <p>Choose from 10 curated gradients or build your own color palette.</p>
         <img src="/screenshots/web/screenshot-03-gradient-colors.webp"
             alt="CoachMe gradient color picker for card customization">
         </div>
@@ -197,6 +304,69 @@
         </div>
         </div>
         </section>
+
+<!-- FAQ -->
+<section class="section-white" id="faq">
+    <div class="section-inner">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="faq-list">
+            <details>
+                <summary>What's the difference between Free and Pro?</summary>
+                <div class="faq-answer">
+                    <p>Free lets you create up to <strong>3 custom cards</strong> — with your own messages or quotes drawn from the built-in library. <strong>Pro (€9.99 one-time)</strong> unlocks two things:</p>
+                    <ul>
+                        <li>Unlimited custom cards</li>
+                        <li>Surprise cards drawn automatically from the full library throughout your day</li>
+                    </ul>
+                    <p>That's it. All customization options — gradients, photos, fonts, scheduling — are fully unlocked from the start, in both Free and Pro. No artificial limits.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Is the €9.99 really a one-time purchase?</summary>
+                <div class="faq-answer">
+                    <p>Yes — pay once, own it forever. No subscription, no recurring charge, no renewal. Future quote-library updates and new languages are included at no extra cost.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Which macOS versions are supported?</summary>
+                <div class="faq-answer">
+                    <p>CoachMe requires <strong>macOS 26 Tahoe or later</strong> and runs <strong>natively on Apple Silicon</strong> (M1, M2, M3, M4) for the best performance and battery efficiency.</p>
+                </div>
+            </details>
+            <details>
+                <summary>How can I customize my cards?</summary>
+                <div class="faq-answer">
+                    <p>Deeply. You can:</p>
+                    <ul>
+                        <li>Write your own messages — goals, mantras, reminders, words to yourself</li>
+                        <li>Choose from 10 curated gradient backgrounds, or build your own color palette</li>
+                        <li>Use any photo from your library as a card background — your dreams, places, loved ones</li>
+                        <li>Pick fonts, sizes, icons — every visual detail</li>
+                    </ul>
+                    <p>Your cards stay yours, even when the quote comes from the library.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Can I control when cards appear?</summary>
+                <div class="faq-answer">
+                    <p>Absolutely — you set the rhythm. Schedule specific times, regular intervals during work hours, or let surprise cards land throughout the day. Pause everything during focus blocks, evenings, weekends — whenever you need silence.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Where is my data stored?</summary>
+                <div class="faq-answer">
+                    <p>Entirely on your Mac. CoachMe uses local SwiftData and UserDefaults — no cloud, no account, no telemetry. We don't even know when you open the app. Local backups are saved before major updates so you never lose your cards.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Will new quotes and languages keep coming?</summary>
+                <div class="faq-answer">
+                    <p>Yes — the library is the core ongoing work. The goal is to grow toward several thousand quotes and add more languages over time. Your Pro purchase funds this directly, and all updates are free for Pro users.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
 
 <!-- SUPPORT -->
 <section class="section-white" id="support">
