@@ -345,6 +345,86 @@ section {
     text-decoration: underline;
 }
 
+/* ── APP STORE BADGE ── */
+.app-store-badge {
+    display: inline-block;
+    line-height: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.app-store-badge:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+}
+
+.app-store-badge img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* ── HERO MICROCOPY ── */
+.hero .free-tagline {
+    font-size: 14px;
+    color: var(--color-text-sub);
+    margin: 16px 0 0;
+}
+
+.hero .free-tagline strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* ── FEATURE TESTIMONIAL ── */
+.feature-testimonial {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--color-text-sub);
+    border-left: 2px solid var(--color-border);
+    padding-left: 12px;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.feature-testimonial cite {
+    display: block;
+    font-style: normal;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--color-text-sub);
+}
+
+/* ── FINAL CTA ── */
+.cta-final {
+    padding: 64px 24px;
+    background: linear-gradient(135deg, #0071E3 0%, #003D80 100%);
+}
+
+.cta-final-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-final h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.cta-final p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 28px;
+}
+
+.cta-final .app-store-badge {
+    margin: 0;
+}
+
 /* ── FOOTER ── */
 footer {
     border-top: 1px solid var(--color-border);
