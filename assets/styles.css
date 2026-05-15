@@ -394,6 +394,26 @@ section {
     color: var(--color-text-sub);
 }
 
+/* ── PRIVACY QUOTE ── */
+.privacy-quote {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.55;
+    padding: 0 16px;
+}
+
+.privacy-quote cite {
+    display: block;
+    margin-top: 14px;
+    font-size: 13px;
+    font-style: normal;
+    color: var(--color-text-sub);
+}
+
 /* ── FINAL CTA ── */
 .cta-final {
     padding: 64px 24px;
