@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Hidden from search engines — direct URL only -->
+<meta name="robots" content="noindex, nofollow">
+
+<title>CoachMe — Press Kit</title>
+<meta name="description"
+    content="CoachMe press kit — a 3.5 MB, fully offline macOS app for daily motivation. No AI, no account, no subscription.">
+
+<!-- Self-referential canonical, no hreflang alternates (page is intentionally hidden) -->
+<link rel="canonical" href="https://coachme.esprit-du-net.eu/press/">
+
+<!-- Open Graph — lets a shared link show a clean preview to a journalist -->
+<meta property="og:title" content="CoachMe — Press Kit">
+<meta property="og:description"
+    content="A quiet ritual, beautifully timed. Calm tech for daily motivation on the Mac — no AI, no cloud, no subscription.">
+<meta property="og:image" content="https://coachme.esprit-du-net.eu/screenshots/web/screenshot-01-steve-jobs-card.webp">
+<meta property="og:url" content="https://coachme.esprit-du-net.eu/press/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/icon.png">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+    /* Press-page-only refinements — reuse all base tokens & components */
+    .press-meta {
+        text-align: center;
+        font-size: 13px;
+        color: var(--color-text-sub);
+        margin-top: 24px;
+        font-style: italic;
+    }
+
+    .press-prose {
+        max-width: 720px;
+        margin: 0 auto;
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-text);
+    }
+
+    .press-prose p + p {
+        margin-top: 16px;
+    }
+
+    .press-lead {
+        font-size: 21px;
+        line-height: 1.55;
+        color: var(--color-text);
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .press-features {
+        max-width: 760px;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+    }
+
+    .press-features li {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--color-border);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--color-text-sub);
+    }
+
+    .press-features li:last-child {
+        border-bottom: none;
+    }
+
+    .press-features strong {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .press-diff {
+        max-width: 760px;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .press-diff li {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 20px 22px;
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--color-text-sub);
+    }
+
+    .press-diff strong {
+        display: block;
+        color: var(--color-text);
+        font-weight: 600;
+        margin-bottom: 4px;
+        font-size: 16px;
+    }
+
+    .factsheet {
+        max-width: 760px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 100%;
+        background: var(--color-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+    }
+
+    .factsheet th,
+    .factsheet td {
+        text-align: left;
+        padding: 14px 20px;
+        font-size: 15px;
+        border-bottom: 1px solid var(--color-border);
+        vertical-align: top;
+        line-height: 1.55;
+    }
+
+    .factsheet tr:last-child th,
+    .factsheet tr:last-child td {
+        border-bottom: none;
+    }
+
+    .factsheet th {
+        font-weight: 600;
+        color: var(--color-text);
+        width: 32%;
+        background: var(--color-bg-alt);
+    }
+
+    .factsheet td {
+        color: var(--color-text-sub);
+    }
+
+    .factsheet-note {
+        max-width: 760px;
+        margin: 16px auto 0;
+        font-size: 13px;
+        color: var(--color-text-sub);
+        font-style: italic;
+        line-height: 1.55;
+    }
+
+    .press-testimonials {
+        max-width: 760px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .press-testimonials blockquote {
+        background: var(--color-bg);
+        border-left: 3px solid var(--color-accent);
+        padding: 20px 24px;
+        font-size: 17px;
+        font-style: italic;
+        color: var(--color-text);
+        line-height: 1.6;
+        border-radius: 0 12px 12px 0;
+    }
+
+    .press-screenshots {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin: 0 auto;
+    }
+
+    .press-screenshots figure {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+    }
+
+    .press-screenshots img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+        display: block;
+    }
+
+    .press-screenshots figcaption {
+        font-size: 14px;
+        color: var(--color-text-sub);
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .press-screenshots .press-shot-hero {
+        grid-column: 1 / -1;
+    }
+
+    .press-links {
+        max-width: 720px;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+    }
+
+    .press-links li {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--color-border);
+        font-size: 15px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .press-links li:last-child {
+        border-bottom: none;
+    }
+
+    .press-links .press-link-label {
+        font-weight: 600;
+        color: var(--color-text);
+        min-width: 180px;
+    }
+
+    .press-links a {
+        color: var(--color-accent);
+        text-decoration: none;
+        word-break: break-all;
+    }
+
+    .press-links a:hover {
+        text-decoration: underline;
+    }
+
+    .press-contact {
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .press-contact .press-email {
+        font-size: 19px;
+        font-weight: 600;
+        margin: 12px 0;
+    }
+
+    .press-contact .press-email a {
+        color: var(--color-accent);
+        text-decoration: none;
+    }
+
+    .press-contact .press-email a:hover {
+        text-decoration: underline;
+    }
+
+    .press-contact .press-assets-note {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        line-height: 1.6;
+        margin-top: 16px;
+    }
+
+    .press-icon-block {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .press-icon-block img {
+        width: 128px;
+        height: 128px;
+        border-radius: 28px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .press-icon-block p {
+        margin-top: 12px;
+        font-size: 13px;
+        color: var(--color-text-sub);
+    }
+
+    @media (max-width: 768px) {
+        .press-diff {
+            grid-template-columns: 1fr;
+        }
+
+        .press-screenshots {
+            grid-template-columns: 1fr;
+        }
+
+        .factsheet th {
+            width: 40%;
+        }
+
+        .press-links li {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .press-links .press-link-label {
+            min-width: auto;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- HEADER — same brand + App Store button as the rest of the site.
+     Language switcher intentionally omitted: this page is English-only,
+     no FR/DE/ES equivalents exist. -->
+<header class="site-header">
+    <a href="/" class="brand">
+        <img src="/icon.png" alt="CoachMe app icon">
+        <span>CoachMe</span>
+    </a>
+    <div class="site-header-actions">
+        <a href="https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12" class="btn btn-sm"
+            aria-label="Download CoachMe on the Mac App Store">Download — Mac App Store</a>
+    </div>
+</header>
+
+<!-- HERO — tagline + one-liner pitch -->
+<section class="hero">
+    <h1>A quiet ritual, beautifully timed.</h1>
+    <p class="subtitle">Calm tech for daily motivation on the Mac — no AI, no cloud, no subscription.</p>
+    <p class="press-meta">Press Kit · Last updated May 2026 · App version 1.0.6</p>
+    <div class="press-prose" style="margin-top: 48px;">
+        <p class="press-lead">CoachMe is a tiny, fully offline Mac app that shows you a beautifully timed motivation card — a quote you love, or a message you wrote to your future self — exactly when you need it.</p>
+    </div>
+</section>
+
+<!-- SHORT + LONG DESCRIPTION -->
+<section class="section-alt" id="description">
+    <div class="section-inner">
+        <h2 class="section-title">About CoachMe</h2>
+        <div class="press-prose">
+            <p><strong>Short description (~40 words).</strong> CoachMe is a 3.5&nbsp;MB, fully offline Mac app for daily motivation. Schedule elegant floating cards — hand-picked quotes or messages you write to yourself — to appear at the right moment. No AI, no account, no tracking, no subscription.</p>
+            <p style="margin-top: 32px;"><strong>Long description.</strong></p>
+            <p>CoachMe turns daily motivation into a quiet ritual on your Mac. You create cards — either from a library of 700+ hand-curated quotes, or in your own words — and schedule them to appear as elegant floating windows: a morning push before work, an invitation to pause at noon, or a note you wrote to yourself a month ago, set to resurface today.</p>
+            <p>There's no AI generating anything, no account to create, no cloud sync, and no data leaving your machine. Everything is stored locally. The app weighs 3.5&nbsp;MB and runs natively on Apple Silicon.</p>
+            <p>It's free to use with up to 3 cards. A single one-time purchase (CoachMe Pro) unlocks unlimited cards and surprise cards drawn from the full library — no subscription, ever. CoachMe is built and maintained by one person, and the quote library keeps growing with every update.</p>
+        </div>
+    </div>
+</section>
+
+<!-- KEY FEATURES -->
+<section class="section-white" id="features">
+    <div class="section-inner">
+        <h2 class="section-title">Key features</h2>
+        <ul class="press-features">
+            <li><strong>Your words or ours</strong> — write personal goals, affirmations, and reminders, or draw from 700+ curated quotes across philosophy, leadership, stoicism, and mindfulness (722 quotes by 93 authors today, growing with each update).</li>
+            <li><strong>Smart scheduling</strong> — by time of day, recurring interval, or specific weekdays. Cards appear as elegant floating windows, then disappear. Pause everything during focus blocks, evenings, or weekends.</li>
+            <li><strong>Surprise cards (Pro)</strong> — with CoachMe Pro, let the app draw a card from the full library automatically through your day, an unobtrusive invitation to pause and breathe.</li>
+            <li><strong>Beautiful by design</strong> — 10 curated gradients or your own palette, 24 fonts, icons, and any photo from your library as a card background.</li>
+            <li><strong>Built for your language</strong> — full support for English, French, German, and Spanish: app, interface, and quote library.</li>
+            <li><strong>Privacy by design</strong> — all data stored locally via SwiftData inside the app sandbox; sensitive content redacted from system logs; automatic local backups before major updates.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- WHAT MAKES IT DIFFERENT -->
+<section class="section-alt" id="different">
+    <div class="section-inner">
+        <h2 class="section-title">What makes it different</h2>
+        <p class="press-lead" style="margin-bottom: 40px;">In a market full of "AI-powered", always-connected, subscription-based motivation apps, CoachMe is the deliberate opposite — <strong>software the way it used to be</strong>.</p>
+        <ul class="press-diff">
+            <li><strong>No AI.</strong> Every quote is hand-curated and verified against its source. Nothing is generated.</li>
+            <li><strong>100% offline.</strong> No accounts, no telemetry, no analytics. The developer literally cannot know when you open the app.</li>
+            <li><strong>Pay once.</strong> A single purchase, owned forever. No subscription, no renewal.</li>
+            <li><strong>Featherlight.</strong> 3.5&nbsp;MB — yes, megabytes.</li>
+            <li><strong>Solo-built.</strong> Made and maintained by one independent developer, not a venture-funded attention machine.</li>
+            <li><strong>Honest in scope.</strong> It won't "transform your life". It offers a small, well-crafted ritual — and does it beautifully.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- FACT SHEET -->
+<section class="section-white" id="fact-sheet">
+    <div class="section-inner">
+        <h2 class="section-title">Fact sheet</h2>
+        <table class="factsheet">
+            <tbody>
+                <tr><th>Name</th><td>CoachMe — Daily Motivation</td></tr>
+                <tr><th>Category</th><td>Productivity</td></tr>
+                <tr><th>Platform</th><td>macOS (Mac App Store)</td></tr>
+                <tr><th>Requirements</th><td>macOS 26 Tahoe or later · Apple Silicon (M1–M4)</td></tr>
+                <tr><th>Size</th><td>3.5&nbsp;MB</td></tr>
+                <tr><th>Price</th><td>Free (up to 3 cards) · Pro €9.99 / $9.99 one-time, no subscription</td></tr>
+                <tr><th>Languages</th><td>English, French, German, Spanish</td></tr>
+                <tr><th>Privacy</th><td>No data collected · 100% offline · No account · No AI</td></tr>
+                <tr><th>Developer</th><td>Olivier Maréchal — Esprit du Net (independent, France)</td></tr>
+                <tr><th>Release</th><td>v1.0.0 April 2026 · current v1.0.6</td></tr>
+            </tbody>
+        </table>
+        <p class="factsheet-note">Free includes up to 3 cards, which you can compose from your own words or from the quote library. Pro unlocks unlimited cards and surprise cards drawn automatically from the full library. All customization — gradients, photos, fonts, scheduling — is free from the start.</p>
+    </div>
+</section>
+
+<!-- SCREENSHOTS — display-only, no download links -->
+<section class="section-alt" id="screenshots">
+    <div class="section-inner">
+        <h2 class="section-title">Screenshots</h2>
+        <div class="press-screenshots">
+            <figure class="press-shot-hero">
+                <img src="/screenshots/web/screenshot-01-steve-jobs-card.webp"
+                    alt="A motivation card floating on the desktop">
+                <figcaption>A motivation card floating on the desktop <em>(hero shot)</em></figcaption>
+            </figure>
+            <figure>
+                <img src="/screenshots/web/screenshot-05-your-inspiration.webp"
+                    alt="Writing your own card in CoachMe">
+                <figcaption>Writing your own card: your words, your rules</figcaption>
+            </figure>
+            <figure>
+                <img src="/screenshots/web/screenshot-07-full-scheduling.webp"
+                    alt="CoachMe scheduling interface">
+                <figcaption>Scheduling that fits your rhythm</figcaption>
+            </figure>
+            <figure>
+                <img src="/screenshots/web/screenshot-02-quote-library.webp"
+                    alt="The CoachMe quote library">
+                <figcaption>The 700+ quote library</figcaption>
+            </figure>
+            <figure>
+                <img src="/screenshots/web/screenshot-03-gradient-colors.webp"
+                    alt="Gradient and color customization">
+                <figcaption>Gradient and color customization</figcaption>
+            </figure>
+            <figure>
+                <img src="/screenshots/web/screenshot-06-make-it-yours.webp"
+                    alt="Fonts, sizes, colors, icons">
+                <figcaption>Fonts, sizes, colors, icons</figcaption>
+            </figure>
+            <figure class="press-shot-hero">
+                <img src="/screenshots/web/screenshot-04-languages.webp"
+                    alt="EN / FR / DE / ES support">
+                <figcaption>EN / FR / DE / ES support</figcaption>
+            </figure>
+        </div>
+        <div class="press-icon-block">
+            <img src="/icon.png" alt="CoachMe app icon">
+            <p>App icon</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-white" id="testimonials">
+    <div class="section-inner">
+        <h2 class="section-title">What early users say</h2>
+        <div class="press-testimonials">
+            <blockquote>"The surprise cards, set to one or two a day during my work hours, invite me into a deep pause — and some of them are genuinely excellent."</blockquote>
+            <blockquote>"It's very light, clean, respectful of my environment — and I love how the reminder shows up at just the right moment, with a personal message you wrote to yourself."</blockquote>
+            <blockquote>"Brilliant — really well made, and genuinely useful."</blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- LINKS -->
+<section class="section-alt" id="links">
+    <div class="section-inner">
+        <h2 class="section-title">Links</h2>
+        <ul class="press-links">
+            <li>
+                <span class="press-link-label">Mac App Store</span>
+                <a href="https://apps.apple.com/us/app/coachme-daily-motivation/id6760231959?mt=12" rel="noopener">apps.apple.com/us/app/coachme-daily-motivation/id6760231959</a>
+            </li>
+            <li>
+                <span class="press-link-label">Website</span>
+                <a href="https://coachme.esprit-du-net.eu/" rel="noopener">coachme.esprit-du-net.eu</a>
+            </li>
+            <li>
+                <span class="press-link-label">Privacy policy</span>
+                <a href="https://coachme.esprit-du-net.eu/#privacy" rel="noopener">coachme.esprit-du-net.eu/#privacy</a>
+            </li>
+            <li>
+                <span class="press-link-label">Bug tracker (public)</span>
+                <a href="https://github.com/espritdunet/coachme-web/issues" rel="noopener">github.com/espritdunet/coachme-web/issues</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ABOUT THE DEVELOPER -->
+<section class="section-white" id="about">
+    <div class="section-inner">
+        <h2 class="section-title">About the developer</h2>
+        <div class="press-prose">
+            <p>CoachMe is built by Olivier Maréchal, an independent macOS developer based in France (trading as Esprit du Net). It's a solo project: every quote is curated by hand, and revenue from the one-time Pro purchase funds the growing library — more quotes, more languages, over time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-alt" id="contact">
+    <div class="section-inner">
+        <h2 class="section-title">Contact</h2>
+        <div class="press-contact">
+            <p class="press-email"><a href="mailto:support@esprit-du-net.eu">support@esprit-du-net.eu</a></p>
+            <p class="press-assets-note">Press assets (HD screenshots, app icon) and promo codes available on request — <a href="mailto:support@esprit-du-net.eu">support@esprit-du-net.eu</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER — same as the rest of the site, no press link added -->
+<footer>
+    <p>&copy; 2026 Esprit du Net (Olivier). Built with ❤️ for macOS.</p>
+    <p>Apple, the Apple logo, and macOS are trademarks of Apple Inc.</p>
+</footer>
+
+</body>
+</html>

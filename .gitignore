@@ -42,6 +42,7 @@ auth.json
 screenshots/originals/
 
 # --- Press Kit ---
-press/
+press/*
+!press/index.html
 
 
