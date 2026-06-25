@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coachme.esprit-du-net.eu/sitemap.xml
