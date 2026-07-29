@@ -38,6 +38,9 @@ auth.json
 *.sublime-project
 *.sublime-workspace
 
+# --- CLAUDE IA ----
+.claude/
+
 # ---Originals Screenshots ---
 screenshots/originals/
 
