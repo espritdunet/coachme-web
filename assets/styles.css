@@ -135,7 +135,8 @@ body {
 .hero .subtitle {
     font-size: 21px;
     color: var(--color-text-sub);
-    margin-bottom: 40px;
+    max-width: 720px;
+    margin: 0 auto 40px;
 }
 
 .hero-screenshot {
