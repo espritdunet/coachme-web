@@ -135,7 +135,8 @@ body {
 .hero .subtitle {
     font-size: 21px;
     color: var(--color-text-sub);
-    margin-bottom: 40px;
+    max-width: 720px;
+    margin: 0 auto 40px;
 }
 
 .hero-screenshot {
@@ -149,6 +150,59 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
     display: block;
+}
+
+/* Mac screenshot with an iPhone overlapping its bottom-right corner */
+.hero-devices {
+    position: relative;
+    padding-bottom: 6%;
+}
+
+.hero-devices .hero-iphone {
+    position: absolute;
+    right: -3%;
+    bottom: 0;
+    width: 21%;
+    border-radius: 18px;
+    border: 4px solid #1D1D1F;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* ── HERO ANNOUNCEMENT ── */
+.hero-announce {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text);
+    text-decoration: none;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 980px;
+    padding: 6px 16px 6px 6px;
+    margin-bottom: 28px;
+    transition: border-color 0.15s ease;
+}
+
+.hero-announce:hover {
+    border-color: var(--color-text-sub);
+}
+
+.hero-announce .tag {
+    background: var(--color-text);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 980px;
+    padding: 3px 10px;
+}
+
+/* ── STORE BADGES ROW ── */
+.store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 16px;
 }
 
 /* ── SECTIONS ── */
@@ -213,6 +267,61 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
     margin-top: auto;
+}
+
+/* ── WHAT'S NEW (v2) ── */
+.section-intro {
+    max-width: 640px;
+    margin: -32px auto 48px;
+    text-align: center;
+    font-size: 17px;
+    color: var(--color-text-sub);
+}
+
+.features-grid--alt .feature-card {
+    background: var(--color-bg-alt);
+}
+
+/* Device composites: transparent PNG-style shots, framed in the image itself */
+.feature-card img.device-shot {
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.12));
+}
+
+.buy-once {
+    margin: 32px auto 0;
+    max-width: 1040px;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.buy-once .emoji {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.buy-once h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.buy-once p {
+    font-size: 15px;
+    color: var(--color-text-sub);
+}
+
+.upgrade-note {
+    margin: 20px auto 0;
+    max-width: 720px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-sub);
 }
 
 /* ── GALLERY GRID ── */
@@ -638,6 +747,19 @@ footer p+p {
     .privacy-grid {
         grid-template-columns: 1fr;
     }
+
+    .buy-once {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .hero-devices .hero-iphone {
+        right: 0;
+        width: 26%;
+        border-width: 3px;
+        border-radius: 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -661,6 +783,10 @@ footer p+p {
     .lang-switcher {
         gap: 6px;
         font-size: 12px;
+    }
+
+    .hero-pills li {
+        white-space: normal;
     }
 }
 
